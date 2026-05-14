@@ -2,6 +2,7 @@
   "name": "ecommerce_admin_dashboard",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon app.js",
     "start": "node app.js"
@@ -18,11 +19,16 @@
     "connect-session-sequelize": "^7.1.7",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "express-formidable": "^1.2.0",
     "express-session": "^1.19.0",
     "jsonwebtoken": "^9.0.3",
     "nodemon": "^3.1.14",
     "pg": "^8.20.0",
     "pg-hstore": "^2.3.4",
+    "postgres": "^3.4.9",
     "sequelize": "^6.37.8"
+  },
+  "overrides": {
+    "@tiptap/extension-horizontal-rule": "2.1.13"
   }
 }
