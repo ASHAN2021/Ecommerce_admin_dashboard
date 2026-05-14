@@ -13,7 +13,7 @@ const sequelize = new Sequelize(
 
 import UserModel from './User.js';
 import CategoryModel from './Category.js';
-import ProductModel from './Products.js';
+import ProductModel from './Product.js';
 import OrderModel from './Order.js';
 import OrderItemModel from './OrderItem.js';
 import SettingModel from './Setting.js';
