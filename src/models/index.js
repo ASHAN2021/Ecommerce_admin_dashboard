@@ -1,15 +1,21 @@
 import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
-    host: process.env.DB_HOST,
-    dialect: 'postgres',
-    logging: false,
-  }
-);
+const databaseUrl = process.env.DATABASE_URL;
+
+if (!databaseUrl) {
+  throw new Error('DATABASE_URL is required to connect to Supabase');
+}
+
+const sequelize = new Sequelize(databaseUrl, {
+  dialect: 'postgres',
+  logging: false,
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
+});
 
 import UserModel from './User.js';
 import CategoryModel from './Category.js';
